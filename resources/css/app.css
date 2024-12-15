@@ -1,0 +1,274 @@
+@import "/node_modules/bootstrap-icons/font/bootstrap-icons.min.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    /* style default start */
+    .base-body {
+        @apply bg-stone-100 dark:bg-gray-900
+    }
+    /* style default end */
+
+    /* feature info start */
+    .textInfoSection {
+        @apply absolute -z-20 top-1/4 left-0 right-0
+    }
+    .textColumsSection {
+        @apply font-sans text-center
+    }
+    .headerInfoSection {
+        @apply w-52 mx-auto
+    }
+    .labelInfoColums {
+        @apply font-bold text-base text-gray-600
+    }
+    .textInfoIndex {
+        @apply font-medium text-blue-500 text-base active:hover:text-blue-600 active:hover:underline
+    }
+    /* feature info end */
+
+    /* feature loadscreen start */
+    .screenLoadSection {
+        @apply fixed inset-0 z-50 bg-white flex items-center justify-center
+    }
+    .iconsLoadSection {
+        @apply min-w-6 min-h-6 border-gray-800 border-2 border-solid rounded-full border-t-transparent animate-spin
+    }
+    /* feature loadscreen end */
+
+    /* feature alert start */
+    .alertSection {
+        @apply fixed left-0 end-0 rounded-xl p-2.5 m-4 border-2 z-30 border-gray-400 bg-neutral-100
+    }
+    .columsAlertSection {
+        @apply flex items-center gap-2.5
+    }
+    .rowsAlertSection {
+        @apply bg-blue-600 rounded-lg w-7 h-7 inline-flex items-center justify-center
+    }
+    .iconsAlertSection {
+        @apply text-sm text-white
+    }
+    .alertLabelSection {
+        @apply text-sm font-sans font-semibold text-gray-700
+    }
+    /* feature alert end */
+
+    /* feature tooltip start */
+    .tooltipCreate {
+        @apply rounded-full shadow-md z-20 w-11 h-11 flex items-center justify-center bg-blue-500 fixed bottom-0 end-0 m-4 active:hover:bg-blue-600
+    }
+    .columsTooltipCreate {
+        @apply font-sans text-gray-200 text-xl
+    }
+    /* feature tooltip end */
+}
+
+@layer components {
+    /* header start */
+    .navSection {
+        @apply fixed top-0 z-50 p-4 w-full bg-stone-100 dark:bg-gray-900
+    }
+    .searchFormInputSection {
+        @apply inline-flex items-center justify-between w-full border-2 border-gray-500 font-sans py-1 px-3 rounded-full
+    }
+    .formSearchInputSection {
+        @apply inline-flex items-center justify-center w-full
+    }
+    .iconsSearchInputSection {
+        @apply font-extrabold text-base pr-1.5 mb-0.5 text-gray-500 block
+    }
+    .searchInputSection {
+        @apply bg-transparent w-full font-sans focus:outline-none text-sm text-gray-600 placeholder:text-gray-500 placeholder:font-medium placeholder:font-sans placeholder:text-sm
+    }
+    .buttonListMenuSection {
+        @apply pl-1.5
+    }
+    .iconsListMenuSection {
+        @apply font-extrabold text-xl text-gray-500 block active:hover:text-gray-800
+    }
+    .layerBackgroundMenuSection {
+        @apply fixed inset-0 h-full w-full bg-black bg-opacity-55 transform ease-in-out
+    }
+    .listMenuSection {
+        @apply fixed inset-0 z-20 h-screen p-4 w-56 bg-white block transform -translate-x-full shadow-xl transition-transform ease-in-out
+    }
+    .bioUserSection {
+        @apply flex items-center gap-2.5 pb-5
+    }
+    .photoBioUserSection {
+        @apply rounded-full h-9 w-9 border-solid border-gray-400 border-2
+    }
+    .infoBioUserSection {
+        @apply font-sans text-xs truncate
+    }
+    .usernameBioUserSection {
+        @apply font-bold text-gray-700
+    }
+    .emailBioUserSection {
+        @apply font-medium text-gray-600 truncate
+    }
+    .columsListMenuSection {
+        @apply space-y-5 px-2
+    }
+    .itemListMenuSection:nth-child(-n+7) {
+        @apply text-gray-600 font-sans text-base gap-2.5 flex items-center font-medium active:hover:text-gray-800
+    }
+    /* header end */
+
+    /* section start */
+    .dataCardUser {
+        @apply px-4 relative top-20
+    }
+    .dataColumsCardUser {
+        @apply block mb-4 duration-300 ease-in-out hover:active:scale-95
+    }
+    .dataContentCardUser {
+        @apply border-solid border border-gray-600 rounded-lg font-sans
+    }
+    .dataDateCardUser {
+        @apply absolute font-medium font-sans text-xs m-2 px-1.5 text-gray-200 pb-0.5 bg-blue-500 shadow-md rounded-full
+    }
+    .dataIconsCardUser {
+        @apply absolute end-6 bottom-24
+    }
+    .dataAssetCardUser {
+        @apply rounded-md w-7 h-7
+    }
+    .dataBannerCardUsere {
+        @apply object-cover w-full h-32 rounded-tl-md rounded-tr-md
+    }
+    .dataArticelCardUser {
+        @apply p-2.5
+    }
+    .dataLabelCardUser {
+        @apply font-bold text-base text-gray-700 mb-1
+    }
+    .dataDescriptionCardUser {
+        @apply font-medium text-gray-600 text-sm
+    }
+    /* section end */
+}
+
+@layer utilities {
+    /* signIn/signUp start */
+    .formHeaderSection {
+        @apply -z-10 mx-auto
+    }
+    .formSection {
+        @apply flex items-center justify-center
+    }
+    .columsFormSection {
+        @apply w-full px-4 space-y-6
+    }
+    .formLabelSection {
+        @apply font-sans font-bold text-xl
+    }
+    .columsInputSection {
+        @apply border-2 border-gray-400 font-sans shadow flex py-2 px-3 rounded-full focus-within:border-blue-600
+    }
+    .iconsInputSection {
+        @apply pr-2.5 text-lg text-gray-600
+    }
+    .inputSection {
+        @apply bg-transparent w-full focus:outline-none placeholder:text-gray-500 placeholder:font-medium placeholder:font-sans
+    }
+    .iconsShowInputSection {
+        @apply pl-3 pr-1.5 text-lg text-gray-600 active:hover:text-blue-600
+    }
+    .buttonFormSection {
+        @apply w-full bg-blue-600 text-white py-2 shadow rounded-full active:hover:bg-blue-500 transition duration-200
+    }
+    .columsButtonFormSection {
+        @apply inline-flex items-center justify-center
+    }
+    .textButtonFormSection {
+        @apply font-sans font-medium
+    }
+    .iconsButtonFormSection {
+        @apply min-h-4 min-w-4 border-gray-300 border-2 border-solid rounded-full border-t-transparent animate-spin
+    }
+    .paragaftFormIndex {
+        @apply text-center text-gray-600
+    }
+    .formIndexSection {
+        @apply text-blue-500 hover:underline
+    }
+    /* signIn/signUp end */
+
+    /* form/create, edited start */
+    .formCreate,
+    .formEdited {
+        @apply pt-4 pb-7
+    }
+    .columsFormCreate,
+    .columsFormEdited {
+        @apply w-full px-4 space-y-6
+    }
+    .inputFormCreate,
+    .inputFormEdited {
+        @apply border-2 border-gray-400 font-sans shadow flex py-2 px-3 rounded-full focus-within:border-blue-600
+    }
+    .iconsInputCreate,
+    .iconsInputEdited {
+        @apply pr-2.5 text-lg text-gray-600
+    }
+    .inputCreate,
+    .inputEdited {
+        @apply bg-transparent w-full focus:outline-none placeholder:text-gray-500 placeholder:font-medium placeholder:font-sans
+    }
+    .inputFileFormCreate,
+    .inputFileFormEdited {
+      @apply border-solid border-2 border-gray-400 pt-2.5 px-3 pb-1.5 rounded-xl
+    }
+    .logoInputFileImage,
+    .iconsInputFileArrow {
+      @apply text-xl
+    }
+    .inputLabelFormCreate,
+    .inputLabelFormEdited {
+        @apply text-base font-medium text-gray-500 flex items-center gap-2.5
+    }
+    .iconsInputFileArrow {
+      @apply -mb-0.5
+    }
+    .inputFIleCreate,
+    .inputFIleEdited {
+        @apply file:px-4 file:py-1.5 file:rounded-full file:border-0 file:text-base file:font-medium file:text-white file:bg-blue-500 file:mr-2.5 file:active:hover:bg-opacity-80 font-sans font-medium text-gray-500 pt-4
+    }
+    .alertFileCreate,
+    .alertFileEdited {
+        @apply text-red-500 mt-2 font-sans font-medium text-xs
+    }
+    .textareaFormCreate,
+    .textareaFormEdited {
+        @apply w-full border-2 border-gray-400 font-sans shadow flex h-28 py-3 px-3 rounded-2xl focus-within:border-blue-600
+    }
+    .iconsTextareaFormCreate,
+    .iconsTextareaFormEdited {
+        @apply pr-2 text-lg text-gray-600
+    }
+    .textareaFormInputCreate,
+    .textareaFormInputEdited {
+        @apply bg-transparent w-full focus:outline-none placeholder:text-gray-500 placeholder:font-medium placeholder:font-sans
+    }
+    .buttonFormCreate,
+    .buttonFormEdited {
+        @apply w-full bg-blue-600 text-white py-2 shadow rounded-full active:hover:bg-blue-500 transition duration-200
+    }
+    .columsButtonFormCreate,
+    .columsButtonFormEdited {
+        @apply inline-flex items-center justify-center
+    }
+    .textButtonFormCreate,
+    .textButtonFormEdited {
+        @apply font-sans font-medium
+    }
+    .iconsButtonFormCreate,
+    .iconsButtonFormEdited {
+        @apply min-h-4 min-w-4 border-gray-300 border-2 border-solid rounded-full border-t-transparent animate-spin
+    }
+    /* form/create end */
+}
