@@ -67,7 +67,7 @@
                 </aside>
                 <aside class="textareaFormEdited">
                     <i class="bi-chat-right-text iconsTextareaFormEdited"></i>
-                    <textarea class="textareaFormInputEdited" placeholder="Description ebook*" name="description" type="text" required>{{ $data->description }}</textarea>
+                    <textarea class="textareaFormInputEdited" placeholder="Description ebook*" name="description" type="text">{{ $data->description }}</textarea>
                 </aside>
                 <button type="submit" class="buttonFormEdited" id="btnForm">
                     <div class="columsButtonFormEdited">
