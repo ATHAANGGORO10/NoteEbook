@@ -14,8 +14,8 @@ class ServerController extends Controller
   public function dashboard()
   {
     if (Auth::check()) {
-      $user = Auth::user();
       $data = Data::all();
+      $user = Auth::user();
 
       return view('page.index', compact('data', 'user'));
     }
@@ -28,10 +28,6 @@ class ServerController extends Controller
   // Menampilkan halaman signIn
   public function signIn()
   {
-    if (Auth::check()) {
-      return redirect()->route('dashboard');
-    }
-
     return view('page.auth.signIn');
   }
 
@@ -61,10 +57,6 @@ class ServerController extends Controller
   // Menampilkan halaman signUp
   public function signUp()
   {
-    if (Auth::check()) {
-      return redirect()->route('dashboard');
-    }
-
     return view('page.auth.signUp');
   }
 
@@ -75,9 +67,15 @@ class ServerController extends Controller
         'email'     =>  'required|email',
         'password'  =>  'required'
     ]);
+
     if (User::where('email', $request->email)->exists()) {
         return redirect()->route('signUp')->with('alert', 'Anda sudah terdaftar dalam sistem');
-    } 
+    }
+    
+    if (Auth::check()) {
+      return redirect()->route('dashboard');
+  }
+  
     User::create([
         'username'  => $request->username,
         'email'     => $request->email,
