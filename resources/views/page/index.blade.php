@@ -27,8 +27,8 @@
         <div class="layerBackgroundMenuSection -translate-x-full" id="backgroundMenuSection"></div>
         <menu class="listMenuSection" id="listMenuSection">
             <a class="bioUserSection" href="#">
-                <img class="photoBioUserSection" src="{{ asset('asset/asset-photo-default/asset-1.webp') }}"
-                    alt="" srcset="">
+                <img class="photoBioUserSection" src="{{ asset('asset/asset-photo-default/asset-1.webp') }}" alt=""
+                    srcset="">
                 <main class="infoBioUserSection">
                     <span class="usernameBioUserSection">{{ $user->username }}</span></span>
                     <article class="emailBioUserSection">{{ $user->email }}</article>
@@ -90,32 +90,21 @@
                 <a class="dataColumsCardUser" href="{{ route('views', $item->id) }}">@csrf
                     <aside class="dataContentCardUser">
                         @if ($item->banner)
-                            <span
-                                class="dataDateCardUser">{{ $item->updated_at != $item->created_at ? $item->updated_at->format('d M Y') : $item->created_at->format('d M Y') }}</span>
-                            @if ($item->icons)
-                                <div class="dataIconsCardUser">
-                                    <img class="dataAssetCardUser" src="{{ asset('icons/' . $item->icons) }}">
-                                </div>
-                            @else
-                                <div class="dataIconsCardUser">
-                                    <img class="dataAssetCardUser"
-                                        src="{{ asset('asset/asset-photo-default/asset-1.webp') }}">
-                                </div>
-                            @endif
                             <img class="dataBannerCardUsere" src="{{ asset('banner/' . $item->banner) }}">
                         @else
-                            <span
-                                class="dataDateCardUser">{{ $item->updated_at != $item->created_at ? $item->updated_at->format('d M Y') : $item->created_at->format('d M Y') }}</span>
-                            <div class="dataIconsCardUser">
-                                <img class="dataAssetCardUser"
-                                    src="{{ asset('asset/asset-photo-default/asset-1.webp') }}">
-                            </div>
-                            <img class="dataBannerCardUsere"
-                                src="{{ asset('asset/asset-dashboard/asset-2.svg') }}">
+                            <img class="dataBannerCardUsere" src="{{ asset('asset/asset-dashboard/asset-2.svg') }}">
                         @endif
                         <main class="dataArticelCardUser">
                             <div class="dataLabelCardUser">{{ $item->title }}</div>
-                            <article class="dataDescriptionCardUser">{{ $item->description }}</article>
+                            @if (!empty($item->description))
+                                <p class="dataDescriptionCardUser">{{ $item->description }}</p>
+                            @else
+                                <p class="dataDescriptionCardUser">Tidak ada description</p>
+                            @endif
+                            <article class="dataAuthorCardUser">
+                                <i class="bi-person"></i>
+                                {{ $item->author }}
+                            </article>
                         </main>
                     </aside>
                 </a>

@@ -123,31 +123,25 @@
         @apply px-4 relative top-20
     }
     .dataColumsCardUser {
-        @apply block mb-4 duration-300 ease-in-out hover:active:scale-95
+        @apply block mb-5 duration-300 ease-in-out hover:active:scale-95
     }
     .dataContentCardUser {
-        @apply border-solid border border-gray-600 rounded-lg font-sans
-    }
-    .dataDateCardUser {
-        @apply absolute font-medium font-sans text-xs m-2 px-1.5 text-gray-200 pb-0.5 bg-blue-500 shadow-md rounded-full
-    }
-    .dataIconsCardUser {
-        @apply absolute end-6 bottom-24
-    }
-    .dataAssetCardUser {
-        @apply rounded-md w-7 h-7
+        @apply flex border border-gray-300 shadow rounded-lg font-sans
     }
     .dataBannerCardUsere {
-        @apply object-cover w-full h-32 rounded-tl-md rounded-tr-md
+        @apply object-cover max-w-20 max-h-full rounded-tl-md rounded-bl-md
     }
     .dataArticelCardUser {
-        @apply p-2.5
+      @apply p-2.5 w-full truncate
     }
     .dataLabelCardUser {
-        @apply font-bold text-base text-gray-700 mb-1
+        @apply font-bold text-base text-gray-800 truncate
     }
     .dataDescriptionCardUser {
-        @apply font-medium text-gray-600 text-sm
+      @apply font-medium text-gray-600 text-xs mt-1 truncate
+    }
+    .dataAuthorCardUser {
+        @apply flex items-center font-medium gap-1.5 text-blue-600 text-xs mt-1
     }
     /* section end */
 }
@@ -221,7 +215,7 @@
     }
     .inputFileFormCreate,
     .inputFileFormEdited {
-      @apply border-solid border-2 border-gray-400 pt-2.5 px-3 pb-1.5 rounded-xl
+      @apply border-solid border-2 block border-gray-400 pt-2.5 px-3 pb-1.5 rounded-xl
     }
     .logoInputFileImage,
     .iconsInputFileArrow {
@@ -236,7 +230,7 @@
     }
     .inputFIleCreate,
     .inputFIleEdited {
-        @apply file:px-4 file:py-1.5 file:rounded-full file:border-0 file:text-base file:font-medium file:text-white file:bg-blue-500 file:mr-2.5 file:active:hover:bg-opacity-80 font-sans font-medium text-gray-500 pt-4
+        @apply file:px-4 max-w-full file:py-1.5 file:rounded-full file:border-0 file:text-base file:font-medium file:text-white file:bg-blue-500 file:mr-2.5 file:active:hover:bg-opacity-80 font-sans font-medium text-gray-500 pt-4
     }
     .alertFileCreate,
     .alertFileEdited {
