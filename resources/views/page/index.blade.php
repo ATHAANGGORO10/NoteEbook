@@ -86,8 +86,8 @@
     @else
         @foreach ($data as $item)
             <menu class="dataCardUser {{ !$loop->last ? (!$loop->first ? 'space-y-5' : '') : 'pb-5' }}" data-aos="zoom-in"
-                data-aos-offset="80">
-                <a class="dataColumsCardUser" href="{{ route('views', $item->id) }}">@csrf
+                data-aos-offset="80">@csrf
+                <a class="dataColumsCardUser" href="{{ route('views', $item->id) }}">
                     <aside class="dataContentCardUser">
                         @if ($item->banner)
                             <img class="dataBannerCardUsere" src="{{ asset('banner/' . $item->banner) }}">

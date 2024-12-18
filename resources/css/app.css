@@ -126,7 +126,7 @@
         @apply block mb-5 duration-300 ease-in-out hover:active:scale-95
     }
     .dataContentCardUser {
-        @apply flex border border-gray-300 shadow rounded-lg font-sans
+        @apply flex border border-gray-400 shadow rounded-lg font-sans
     }
     .dataBannerCardUsere {
         @apply object-cover max-w-20 max-h-full rounded-tl-md rounded-bl-md
