@@ -28,7 +28,7 @@ class DataController extends Controller
       'shinopsis' => 'nullable',
       'description' => 'nullable',
     ]);
-
+    
     $data = new Data();
     if ($request->hasFile('banner')) {
       $file = $request->file('banner');
@@ -55,7 +55,7 @@ class DataController extends Controller
       'title' => $request->input('title'),
       'author' => $request->input('author'),
       'label' => $request->input('label'),
-      'code' => $request->input(key: 'code'),
+      'code' => $request->input('code'),
       'url' => $request->input('url'),
       'category' => $request->input('category'),
       'shinopsis' => $request->input('shinopsis'),
@@ -116,7 +116,7 @@ class DataController extends Controller
     $data->author = $request->input('author');
     $data->label = $request->input('label');
     $data->code = $request->input('code');
-    $data->code = $request->input('url');
+    $data->url = $request->input('url');
     $data->category = $request->input('category');
     $data->shinopsis = $request->input('shinopsis');
     $data->description = $request->input('description');

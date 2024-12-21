@@ -85,14 +85,13 @@
         </section>
     @else
         @foreach ($data as $item)
-            <menu class="dataCardUser {{ !$loop->last ? (!$loop->first ? 'space-y-5' : '') : 'pb-5' }}" data-aos="zoom-in"
-                data-aos-offset="80">@csrf
+            <menu class="dataCardUser">@csrf
                 <a class="dataColumsCardUser" href="{{ route('views', $item->id) }}">
                     <aside class="dataContentCardUser">
                         @if ($item->banner)
-                            <img class="dataBannerCardUsere" src="{{ asset('banner/' . $item->banner) }}">
+                            <img class="dataBannerCardUser" src="{{ asset('banner/' . $item->banner) }}" alt="asset/banner">
                         @else
-                            <img class="dataBannerCardUsere" src="{{ asset('asset/asset-dashboard/asset-2.svg') }}">
+                            <img class="dataBannerCardUser" src="{{ asset('asset/asset-banner-default/default.png') }}" alt="banner">
                         @endif
                         <main class="dataArticelCardUser">
                             <div class="dataLabelCardUser">{{ $item->title }}</div>

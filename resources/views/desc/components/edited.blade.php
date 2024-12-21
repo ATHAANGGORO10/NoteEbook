@@ -31,7 +31,7 @@
                 </aside>
                 <aside class="inputFileFormEdited">
                     <label class="inputLabelFormEdited" for="banner">
-                        <i class="bi-images text-xl logoInputFileImage"></i>
+                        <i class="bi-images logoInputFileImage"></i>
                         Tambahkan banner ebook
                         <i class="bi-arrow-right iconsInputFileArrow"></i>
                     </label>
@@ -40,7 +40,7 @@
                 </aside>
                 <aside class="inputFileFormEdited">
                     <label class="inputLabelFormEdited" for="cover">
-                        <i class="bi-images text-xl logoInputFileImage"></i>
+                        <i class="bi-images logoInputFileImage"></i>
                         Tambahkan cover ebook
                         <i class="bi-arrow-right iconsInputFileArrow"></i>
                     </label>
@@ -49,7 +49,7 @@
                 </aside>
                 <aside class="inputFileFormEdited">
                     <label class="inputLabelFormEdited" for="icons">
-                        <i class="bi-images text-xl logoInputFileImage"></i>
+                        <i class="bi-images logoInputFileImage"></i>
                         Tambahkan icons ebook
                         <i class="bi-arrow-right iconsInputFileArrow"></i>
                     </label>
@@ -67,7 +67,7 @@
                 </aside>
                 <aside class="textareaFormEdited">
                     <i class="bi-chat-right-text iconsTextareaFormEdited"></i>
-                    <textarea class="textareaFormInputEdited" placeholder="Description ebook*" name="description" type="text">{{ $data->description }}</textarea>
+                    <textarea class="textareaFormInputEdited" placeholder="Description ebook" name="description" type="text">{{ $data->description }}</textarea>
                 </aside>
                 <button type="submit" class="buttonFormEdited" id="btnForm">
                     <div class="columsButtonFormEdited">

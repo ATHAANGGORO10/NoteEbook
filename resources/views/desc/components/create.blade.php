@@ -26,29 +26,29 @@
                 </aside>
                 <aside class="inputFileFormCreate">
                     <label class="inputLabelFormCreate" for="banner">
-                        <i class="bi-images text-xl logoInputFileImage"></i>
+                        <i class="bi-images logoInputFileImage"></i>
                         Tambahkan banner ebook
                         <i class="bi-arrow-right iconsInputFileArrow"></i>
                     </label>
-                    <input class="inputFIleCreate" type="file" name="banner" id="banner" accept="image/*">
+                    <input class="inputFIleCreate" type="file" name="banner" accept="image/*">
                     <aside class="alertFileCreate active" id="coverAlert"></aside>
                 </aside>
                 <aside class="inputFileFormCreate">
                     <label class="inputLabelFormCreate" for="cover">
-                        <i class="bi-images text-xl logoInputFileImage"></i>
+                        <i class="bi-images logoInputFileImage"></i>
                         Tambahkan cover ebook
                         <i class="bi-arrow-right iconsInputFileArrow"></i>
                     </label>
-                    <input class="inputFIleCreate" type="file" name="cover" id="cover" accept="image/*">
+                    <input class="inputFIleCreate" type="file" name="cover" accept="image/*">
                     <aside class="alertFileCreate active" id="coverAlert"></aside>
                 </aside>
                 <aside class="inputFileFormCreate">
                     <label class="inputLabelFormCreate" for="icons">
-                        <i class="bi-images text-xl logoInputFileImage"></i>
+                        <i class="bi-images logoInputFileImage"></i>
                         Tambahkan icons ebook
                         <i class="bi-arrow-right iconsInputFileArrow"></i>
                     </label>
-                    <input class="inputFIleCreate" type="file" name="icons" id="icons" accept="image/*">
+                    <input class="inputFIleCreate" type="file" name="icons" accept="image/*">
                     <aside class="alertFileCreate active" id="coverAlert"></aside>
                 </aside>
                 <aside class="inputFormCreate">
@@ -61,7 +61,7 @@
                 </aside>
                 <aside class="textareaFormCreate">
                     <i class="bi-chat-right-text iconsTextareaFormCreate"></i>
-                    <textarea class="textareaFormInputCreate" placeholder="Description ebook*" name="description" type="text"></textarea>
+                    <textarea class="textareaFormInputCreate" placeholder="Description ebook" name="description" type="text"></textarea>
                 </aside>
                 <button type="submit" class="buttonFormCreate" id="btnForm">
                     <div class="columsButtonFormCreate">

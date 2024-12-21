@@ -40,7 +40,7 @@
 
     /* feature alert start */
     .alertSection {
-        @apply fixed left-0 end-0 rounded-xl p-2.5 m-4 border-2 z-30 border-gray-400 bg-neutral-100
+        @apply fixed left-0 end-0 rounded-xl p-2.5 m-4 border-2 z-50 border-gray-400 bg-neutral-100
     }
     .columsAlertSection {
         @apply flex items-center gap-2.5
@@ -69,7 +69,7 @@
 @layer components {
     /* header start */
     .navSection {
-        @apply fixed top-0 z-50 p-4 w-full bg-stone-100 dark:bg-gray-900
+        @apply fixed top-0 z-30 p-4 w-full bg-stone-100 dark:bg-gray-900
     }
     .searchFormInputSection {
         @apply inline-flex items-center justify-between w-full border-2 border-gray-500 font-sans py-1 px-3 rounded-full
@@ -126,10 +126,10 @@
         @apply block mb-5 duration-300 ease-in-out hover:active:scale-95
     }
     .dataContentCardUser {
-        @apply flex border border-gray-400 shadow rounded-lg font-sans
+        @apply flex bg-gray-300 shadow-sm rounded-lg font-sans
     }
-    .dataBannerCardUsere {
-        @apply object-cover max-w-20 max-h-full rounded-tl-md rounded-bl-md
+    .dataBannerCardUser {
+        @apply object-cover max-w-20 max-h-full rounded-tl-lg rounded-bl-lg
     }
     .dataArticelCardUser {
       @apply p-2.5 w-full truncate
