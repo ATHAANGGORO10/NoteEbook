@@ -63,12 +63,23 @@
                     <i class="bi-chat-right-text iconsTextareaFormCreate"></i>
                     <textarea class="textareaFormInputCreate" placeholder="Description ebook" name="description" type="text"></textarea>
                 </aside>
-                <button type="submit" class="buttonFormCreate" id="btnForm">
-                    <div class="columsButtonFormCreate">
-                        <span class="textButtonFormCreate" id="textForm">Tambahkan</span>
-                        <span class="iconsButtonFormCreate hidden" id="iconsForm"></span>
-                    </div>
-                </button>
+                <div class="flex items-center gap-2.5">
+                    <button type="submit" class="buttonFormCreate" id="btnForm">
+                        <div class="columsButtonFormCreate">
+                            <span class="textButtonFormCreate" id="textForm">Tambahkan</span>
+                            <span class="iconsButtonFormCreate hidden" id="iconsForm"></span>
+                        </div>
+                    </button>
+                    <form action="{{ route('pin', $data->id) }}" method="POST">
+                        @csrf
+                        <button type="submit" class="buttonFormFavorite" id="btnForm">
+                            <div class="columsButtonFormFavorite">
+                                <span class="textButtonFormFavorite" id="textForm">Favorite</span>
+                                <span class="iconsButtonFormFavorite hidden" id="iconsForm"></span>
+                            </div>
+                        </button>
+                    </form>
+                </div>
             </main>
         </section>
     </form>

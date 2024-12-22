@@ -45,32 +45,28 @@
                 </li>
                 <li class="itemListMenuSection">
                     <i class="bi-star"></i>
-                    <a href="#">Favorite</a>
+                    <a href="{{ route('favorite') }}">Favorite</a>
                 </li>
                 <li class="itemListMenuSection">
                     <i class="bi-question-circle"></i>
                     <a href="{{ url('https://github.com/ATHAANGGORO10/NoteEbook') }}">Bantuan</a>
                 </li>
                 <li class="itemListMenuSection">
-                    <i class="bi-download"></i>
-                    <a href="#">Download</a>
-                </li>
-                <li class="itemListMenuSection">
                     <i class="bi-people"></i>
-                    <a href="{{ url('https://github.com/ATHAANGGORO10/NoteEbook') }}">Komunitas</a>
+                    <a href="https://tr.ee/DY0iFSRrcp/">Komunitas</a>
                 </li>
                 <li class="itemListMenuSection">
                     <i class="bi-gear"></i>
-                    <a href="#">Pengaturan</a>
+                    <a href="/settings">Pengaturan</a>
                 </li>
             </ul>
         </menu>
     </nav>
-    <aside class="tooltipCreate">
-        <a class="columsTooltipCreate" href="{{ route('create') }}">
+    <a class="tooltipCreate" href="{{ route('create') }}">
+        <aside class="columsTooltipCreate">
             <i class="bi-plus-lg"></i>
-        </a>
-    </aside>
+        </aside>
+    </a>
     @if ($data->isEmpty())
         <section class="textInfoSection">
             <div class="textColumsSection">
@@ -85,29 +81,31 @@
         </section>
     @else
         @foreach ($data as $item)
-            <menu class="dataCardUser">@csrf
-                <a class="dataColumsCardUser" href="{{ route('views', $item->id) }}">
-                    <aside class="dataContentCardUser">
-                        @if ($item->banner)
-                            <img class="dataBannerCardUser" src="{{ asset('banner/' . $item->banner) }}" alt="asset/banner">
-                        @else
-                            <img class="dataBannerCardUser" src="{{ asset('asset/asset-banner-default/default.png') }}" alt="banner">
-                        @endif
-                        <main class="dataArticelCardUser">
-                            <div class="dataLabelCardUser">{{ $item->title }}</div>
-                            @if (!empty($item->description))
-                                <p class="dataDescriptionCardUser">{{ $item->description }}</p>
+                <menu class="dataCardUser {{ !$loop->last ? '' : 'pb-5' }}" data-aos="zoom-in" data-aos-offset="50">@csrf
+                    <a class="dataColumsCardUser" href="{{ route('views', $item->id) }}">
+                        <aside class="dataContentCardUser">
+                            @if ($item->banner)
+                                <img class="dataBannerCardUser" src="{{ asset('banner/' . $item->banner) }}"
+                                    alt="asset/banner">
                             @else
-                                <p class="dataDescriptionCardUser">Tidak ada description</p>
+                                <img class="dataBannerCardUser" src="{{ asset('asset/asset-photo-default/asset-1.webp') }}"
+                                    alt="asset/banner">
                             @endif
-                            <article class="dataAuthorCardUser">
-                                <i class="bi-person"></i>
-                                {{ $item->author }}
-                            </article>
-                        </main>
-                    </aside>
-                </a>
-            </menu>
+                            <main class="dataArticelCardUser">
+                                <div class="dataLabelCardUser">{{ $item->title }}</div>
+                                @if (!empty($item->description))
+                                    <p class="dataDescriptionCardUser">{{ $item->description }}</p>
+                                @else
+                                    <p class="dataDescriptionCardUser">Tidak ada description</p>
+                                @endif
+                                <article class="dataAuthorCardUser">
+                                    <i class="bi-person"></i>
+                                    {{ $item->author }}
+                                </article>
+                            </main>
+                        </aside>
+                    </a>
+                </menu>
         @endforeach
     @endif
 @endsection

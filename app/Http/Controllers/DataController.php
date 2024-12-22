@@ -28,7 +28,7 @@ class DataController extends Controller
       'shinopsis' => 'nullable',
       'description' => 'nullable',
     ]);
-    
+
     $data = new Data();
     if ($request->hasFile('banner')) {
       $file = $request->file('banner');
@@ -51,16 +51,15 @@ class DataController extends Controller
       $data->icons = $fileName;
     }
 
-    Data::create([
-      'title' => $request->input('title'),
-      'author' => $request->input('author'),
-      'label' => $request->input('label'),
-      'code' => $request->input('code'),
-      'url' => $request->input('url'),
-      'category' => $request->input('category'),
-      'shinopsis' => $request->input('shinopsis'),
-      'description' => $request->input('description'),
-    ]);
+    $data->title = $request->input('title');
+    $data->author = $request->input('author');
+    $data->label = $request->input('label');
+    $data->code = $request->input('code');
+    $data->url = $request->input('url');
+    $data->category = $request->input('category');
+    $data->shinopsis = $request->input('shinopsis');
+    $data->description = $request->input('description');
+    $data->save();
 
     return redirect()->route('dashboard')->with('alert', 'Data ebook anda berhasil ditambahkan');
   }

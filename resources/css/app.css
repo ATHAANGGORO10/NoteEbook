@@ -7,7 +7,7 @@
 @layer base {
     /* style default start */
     .base-body {
-        @apply bg-stone-100 dark:bg-gray-900
+        @apply bg-stone-100 dark:bg-gray-900 h-screen
     }
     /* style default end */
 
@@ -58,7 +58,7 @@
 
     /* feature tooltip start */
     .tooltipCreate {
-        @apply rounded-full shadow-md z-20 w-11 h-11 flex items-center justify-center bg-blue-500 fixed bottom-0 end-0 m-4 active:hover:bg-blue-600
+        @apply rounded-full shadow-lg z-20 w-11 h-11 flex items-center justify-center bg-blue-500 fixed bottom-0 end-0 m-4 active:hover:bg-blue-600
     }
     .columsTooltipCreate {
         @apply font-sans text-gray-200 text-xl
@@ -126,7 +126,7 @@
         @apply block mb-5 duration-300 ease-in-out hover:active:scale-95
     }
     .dataContentCardUser {
-        @apply flex bg-gray-300 shadow-sm rounded-lg font-sans
+        @apply flex border-solid border border-gray-600 shadow-sm rounded-lg font-sans
     }
     .dataBannerCardUser {
         @apply object-cover max-w-20 max-h-full rounded-tl-lg rounded-bl-lg
@@ -173,7 +173,7 @@
         @apply pl-3 pr-1.5 text-lg text-gray-600 active:hover:text-blue-600
     }
     .buttonFormSection {
-        @apply w-full bg-blue-600 text-white py-2 shadow rounded-full active:hover:bg-blue-500 transition duration-200
+        @apply w-full bg-blue-600 text-white py-2 shadow rounded-full active:hover:bg-blue-700 transition duration-200
     }
     .columsButtonFormSection {
         @apply inline-flex items-center justify-center
@@ -249,19 +249,23 @@
         @apply bg-transparent w-full focus:outline-none placeholder:text-gray-500 placeholder:font-medium placeholder:font-sans
     }
     .buttonFormCreate,
-    .buttonFormEdited {
-        @apply w-full bg-blue-600 text-white py-2 shadow rounded-full active:hover:bg-blue-500 transition duration-200
+    .buttonFormEdited,
+    .buttonFormFavorite {
+        @apply w-full bg-blue-600 text-white py-2 shadow rounded-full active:hover:bg-blue-700 transition duration-200
     }
     .columsButtonFormCreate,
-    .columsButtonFormEdited {
+    .columsButtonFormEdited,
+    .columsButtonFormFavorite {
         @apply inline-flex items-center justify-center
     }
     .textButtonFormCreate,
-    .textButtonFormEdited {
+    .textButtonFormEdited,
+    .textButtonFormFavorite {
         @apply font-sans font-medium
     }
     .iconsButtonFormCreate,
-    .iconsButtonFormEdited {
+    .iconsButtonFormEdited,
+    .iconsButtonFormFavorite {
         @apply min-h-4 min-w-4 border-gray-300 border-2 border-solid rounded-full border-t-transparent animate-spin
     }
     /* form/create end */
