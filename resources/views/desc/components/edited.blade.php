@@ -69,34 +69,12 @@
                     <i class="bi-chat-right-text iconsTextareaFormEdited"></i>
                     <textarea class="textareaFormInputEdited" placeholder="Description ebook" name="description" type="text">{{ $data->description }}</textarea>
                 </aside>
-                <div class="flex items-center gap-2.5">
-                    <form action="{{ route('save', $data->id) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="buttonFormEdited" id="btnForm">
-                            <div class="columsButtonFormEdited">
-                                <span class="textButtonFormEdited" id="textForm">Tambahkan</span>
-                                <span class="iconsButtonFormEdited hidden" id="iconsForm"></span>
-                            </div>
-                        </button>
-                    </form>
-                    @if (!$data->favorite)
-                        <form action="{{ route('pin', $data->id) }}" method="POST">
-                            @csrf
-                            <button type="submit"
-                                class="rounded-full bg-blue-600 w-10 h-10 font-sans text-base text-white flex items-center justify-center">
-                                <i class="bi-star"></i>
-                            </button>
-                        </form>
-                    @else
-                        <form class="hidden" action="{{ route('pin', $data->id) }}" method="POST">
-                            @csrf
-                            <button type="submit"
-                                class="rounded-full bg-blue-600 w-10 h-10 font-sans text-base text-white flex items-center justify-center">
-                                <i class="bi-star"></i>
-                            </button>
-                        </form>
-                    @endif
-                </div>
+                <button type="submit" class="buttonFormEdited" id="btnForm">
+                    <div class="columsButtonFormEdited">
+                        <span class="textButtonFormEdited" id="textForm">Tambahkan</span>
+                        <span class="iconsButtonFormEdited hidden" id="iconsForm"></span>
+                    </div>
+                </button>
             </main>
         </section>
     </form>

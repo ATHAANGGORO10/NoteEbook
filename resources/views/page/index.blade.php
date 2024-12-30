@@ -81,31 +81,30 @@
         </section>
     @else
         @foreach ($data as $item)
-                <menu class="dataCardUser {{ !$loop->last ? '' : 'pb-5' }}" data-aos="zoom-in" data-aos-offset="50">@csrf
-                    <a class="dataColumsCardUser" href="{{ route('views', $item->id) }}">
-                        <aside class="dataContentCardUser">
-                            @if ($item->banner)
-                                <img class="dataBannerCardUser" src="{{ asset('banner/' . $item->banner) }}"
-                                    alt="asset/banner">
-                            @else
-                                <img class="dataBannerCardUser" src="{{ asset('asset/asset-photo-default/asset-1.webp') }}"
-                                    alt="asset/banner">
-                            @endif
-                            <main class="dataArticelCardUser">
-                                <div class="dataLabelCardUser">{{ $item->title }}</div>
-                                @if (!empty($item->description))
-                                    <p class="dataDescriptionCardUser">{{ $item->description }}</p>
-                                @else
-                                    <p class="dataDescriptionCardUser">Tidak ada description</p>
-                                @endif
-                                <article class="dataAuthorCardUser">
-                                    <i class="bi-person"></i>
-                                    {{ $item->author }}
-                                </article>
-                            </main>
-                        </aside>
-                    </a>
-                </menu>
+            <menu class="dataCardUser" data-aos="zoom-in" data-aos-offset="50">@csrf
+                <a class="dataColumsCardUser" href="{{ route('views', $item->id) }}">
+                    <aside class="dataContentCardUser">
+                        @if ($item->favorite == 1)
+                            <i class="bi-star-fill dataCardFavorite"></i>
+                        @endif
+                        @if ($item->banner)
+                            <img class="dataBannerCardUser" src="{{ asset('banner/' . $item->banner) }}"
+                                alt="asset/banner">
+                        @else
+                            <img class="dataBannerCardUser" src="{{ asset('asset/asset-photo-default/asset-1.webp') }}"
+                                alt="asset/banner">
+                        @endif
+                        <main class="dataArticelCardUser">
+                            <div class="dataLabelCardUser">{{ $item->title }}</div>
+                            <p class="dataDescriptionCardUser">{{ $item->description ? : 'Tidak ada description' }}</p>
+                            <article class="dataAuthorCardUser">
+                                <i class="bi-person"></i>
+                                {{ $item->author }}
+                            </article>
+                        </main>
+                    </aside>
+                </a>
+            </menu>
         @endforeach
     @endif
 @endsection

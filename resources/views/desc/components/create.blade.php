@@ -70,15 +70,6 @@
                             <span class="iconsButtonFormCreate hidden" id="iconsForm"></span>
                         </div>
                     </button>
-                    <form action="{{ route('pin', $data->id) }}" method="POST">
-                        @csrf
-                        <button type="submit" class="buttonFormFavorite" id="btnForm">
-                            <div class="columsButtonFormFavorite">
-                                <span class="textButtonFormFavorite" id="textForm">Favorite</span>
-                                <span class="iconsButtonFormFavorite hidden" id="iconsForm"></span>
-                            </div>
-                        </button>
-                    </form>
                 </div>
             </main>
         </section>
