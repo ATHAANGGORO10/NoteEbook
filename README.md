@@ -1,6 +1,12 @@
 
 | configuration/installation/database |
 
+# Configuration Storage Link :
+## commad prompt
+```bash
+   php artisan storag:link
+```
+
 # Configuration Database :
 ## command prompt 
 ```bash

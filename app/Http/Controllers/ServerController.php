@@ -10,12 +10,12 @@ use Illuminate\Support\Facades\Hash;
 
 class ServerController extends Controller
 {
-  // Menampilkan halaman dashboard
+  // Feature views data user to dashboard
   public function dashboard()
   {
     if (Auth::check()) {
-      $data = Data::all();
       $user = Auth::user();
+      $data = Data::all();
 
       return view('page.index', compact('data', 'user'));
     }
@@ -25,7 +25,7 @@ class ServerController extends Controller
 
   //-------------------------------------------------------------------------------------------------//
 
-  // Menampilkan halaman signIn
+  // Feature signIn account
   public function signIn()
   {
     return view('page.auth.signIn');
@@ -54,7 +54,7 @@ class ServerController extends Controller
 
   //-------------------------------------------------------------------------------------------------//
 
-  // Menampilkan halaman signUp
+  // Feature signUp account
   public function signUp()
   {
     return view('page.auth.signUp');
@@ -63,30 +63,30 @@ class ServerController extends Controller
   public function showSignUp(Request $request)
   {
     $request->validate([
-        'username'  =>  'required',
-        'email'     =>  'required|email',
-        'password'  =>  'required'
+      'username' => 'required',
+      'email' => 'required|email',
+      'password' => 'required'
     ]);
 
     if (User::where('email', $request->email)->exists()) {
-        return redirect()->route('signUp')->with('alert', 'Anda sudah terdaftar dalam sistem');
+      return redirect()->route('signUp')->with('alert', 'Anda sudah terdaftar dalam sistem');
     }
-    
+
     if (Auth::check()) {
       return redirect()->route('dashboard');
-  }
-  
+    }
+
     User::create([
-        'username'  => $request->username,
-        'email'     => $request->email,
-        'password'  => Hash::make($request->password),
+      'username' => $request->username,
+      'email' => $request->email,
+      'password' => Hash::make($request->password),
     ]);
-    return redirect()->route('signIn')->with('alert', 'Akun anda berhasil terdaftar');	
+    return redirect()->route('signIn')->with('alert', 'Akun anda berhasil terdaftar');
   }
 
   //-------------------------------------------------------------------------------------------------//
 
-  // Keluar dari auth database user
+  // Feature signOut account
   public function signOut(Request $request)
   {
     Auth::logout();

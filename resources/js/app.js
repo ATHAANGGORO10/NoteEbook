@@ -9,32 +9,32 @@ import 'aos/dist/aos.css';
 AOS.init();
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Megambil element ID alert
+  // Take element ID alert
   const alert = document.getElementById('alert');
 
-  // Mengambil element ID section form
+  // Take element ID section form
   const formSection = document.getElementById('formSection');
 
-  // Mengambil element ID input password
+  // Take element ID input password
   const showPassword = document.getElementById('showPassword');
   const passwordInput = document.getElementById('passwordInput');
 
-  // Mengambil element ID button form
+  // Take element ID button form
   const btnForm = document.getElementById('btnForm');
   const textForm = document.getElementById('textForm');
   const iconsForm = document.getElementById('iconsForm');
 
-  // Mengambil element ID offcanvas menu
+  // Take element ID offcanvas menu
   const btnMenuSection = document.getElementById('btnMenuSection');
   const listMenuSection = document.getElementById('listMenuSection');
   const iconsMenuSection = document.getElementById('iconsMenuSection');
   const backgroundMenuSection = document.getElementById('backgroundMenuSection');
 
-  // Mengambil element ID formCreate
+  // Take element ID formCreate
   const cover = document.getElementById('cover');
   const coverAlert = document.getElementById('coverAlert');
 
-  // Fungsi untuk menampilkan & menyembunyikan input value password
+  // Feature show and hidden password input singIn & signUp
   if (passwordInput && showPassword) {
     showPassword.addEventListener('click', function () {
       if (passwordInput.type === 'password') {
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Menambahkan sebuah loading animation button untuk halaman signIn & signUp
+  // Feature animation button spinner
   if (btnForm && textForm && iconsForm) {
     btnForm.addEventListener('click', (event) => {
       event.preventDefault();
@@ -69,19 +69,19 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Menambahkan sebuah alert notification animation
+  // Feature show alert notification 
   if (alert) {
-    alert.classList.add('animate__animated', 'animate__fadeInDown');
+    alert.classList.add('animate__animated', 'animate__slideInDown');
     setTimeout(() => {
-      alert.classList.remove('animate__fadeInDown')
-      alert.classList.add('animate__fadeOutUp');
+      alert.classList.remove('animate__slideOutDown')
+      alert.classList.add('animate__slideOutUp');
       alert.addEventListener('animationend', () => {
         alert.remove();
       });
     }, 4000);
   }
 
-  // Menambahkan screen loading page
+  // Feature load screen page dashboard
   setTimeout(() => {
     const screenLoading = document.getElementById('screenLoading');
     if (screenLoading) {
@@ -89,7 +89,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }, 200);
 
-  // Menambahkan menu list offcanvas page dashboard
+  // Feature button show & hidden list menu offcanva page dashboard
   if (btnMenuSection && listMenuSection && iconsMenuSection && backgroundMenuSection) {
     let menuListShow = false;
     btnMenuSection.addEventListener('click', function (event) {
@@ -115,7 +115,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
-  // Menambahkan alert form input cover
+  // Feature alert form input cover
   function validateFile(cover, coverAlert) {
     const file = cover.files[0];
     if (file && !file.type.startsWith('image/')) {
@@ -132,3 +132,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 });
+
+// Feature disable inspect element to browser
+document.oncontextmenu = () => {
+  alert('Anda tidak dapat melakukan inspect element');
+  return false;
+}
+
+// Feature disable commad keyboard inspect element to browser 
+document.onkeydown = () => {
+  if (e.key == "F12") {
+    alert('Data tidak tersedia');
+    return false;
+  }
+  if (e.ctrlkey == "u") {
+    alert('Data tidak tersedia');
+    return false;
+  }
+  if (e.ctrlkey == "c") {
+    alert('Data tidak tersedia');
+    return false;
+  }
+  if (e.ctrlkey == "v") {
+    alert('Data tidak tersedia');
+    return false;
+  }
+}

@@ -13,19 +13,25 @@ class CardController extends Controller
     return view('page.components.favorite', compact('data'));
   }
 
+  //-------------------------------------------------------------------------------------------------//
+
+  // Feature pin content data user to page favorite
   public function pin($id)
   {
     $card = Data::findOrFail($id);
     $card->favorite = 1;
     $card->save();
-    return redirect()->route('views')->with('alert', 'Data berhasil dipin');
+    return redirect()->route('views', $id)->with('alert', 'Data berhasil dipin');
   }
 
+  //-------------------------------------------------------------------------------------------------//
+
+  // Feature unpin content data user to page favorite
   public function unpin($id)
   {
     $card = Data::findOrFail($id);
     $card->favorite = 0;
     $card->save();
-    return redirect()->route('views')->with('alert', 'Data berhasil diunpin');
+    return redirect()->route('views', $id)->with('alert', 'Data berhasil diunpin');
   }
 }

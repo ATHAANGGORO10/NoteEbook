@@ -1,28 +1,30 @@
 @extends('app.root')
 
+@section('title', 'Membuat Data Ebook')
+
 @section('content')
     <form action="{{ route('store') }}" method="POST" id="formSection" enctype="multipart/form-data">@csrf
         <section class="formCreate">
             <main class="columsFormCreate">
                 <aside class="inputFormCreate">
                     <i class="bi-bookmark-plus iconsInputCreate"></i>
-                    <input class="inputCreate" placeholder="Title ebook*" name="title" type="text" required>
+                    <input class="inputCreate" placeholder="Title ebook*" name="title" type="text" required>@csrf
                 </aside>
                 <aside class="inputFormCreate">
                     <i class="bi-person-check iconsInputCreate"></i>
-                    <input class="inputCreate" placeholder="Nama Author*" name="author" type="text" required>
+                    <input class="inputCreate" placeholder="Nama Author*" name="author" type="text" required>@csrf
                 </aside>
                 <aside class="inputFormCreate">
                     <i class="bi-tags iconsInputCreate"></i>
-                    <input class="inputCreate" placeholder="Label ebook*" name="label" type="text" required>
+                    <input class="inputCreate" placeholder="Label ebook*" name="label" type="text" required>@csrf
                 </aside>
                 <aside class="inputFormCreate">
                     <i class="bi-archive iconsInputCreate"></i>
-                    <input class="inputCreate" placeholder="Categori ebook*" name="category" type="text" required>
+                    <input class="inputCreate" placeholder="Categori ebook*" name="category" type="text" required>@csrf
                 </aside>
                 <aside class="inputFormCreate">
                     <i class="bi-qr-code-scan iconsInputCreate"></i>
-                    <input class="inputCreate" placeholder="Code ebook" name="code" type="text">
+                    <input class="inputCreate" placeholder="Code ebook" name="code" type="text">@csrf
                 </aside>
                 <aside class="inputFileFormCreate">
                     <label class="inputLabelFormCreate" for="banner">
@@ -30,7 +32,7 @@
                         Tambahkan banner ebook
                         <i class="bi-arrow-right iconsInputFileArrow"></i>
                     </label>
-                    <input class="inputFIleCreate" type="file" name="banner" accept="image/*">
+                    <input class="inputFIleCreate" type="file" name="banner" accept="image/*">@csrf
                     <aside class="alertFileCreate active" id="coverAlert"></aside>
                 </aside>
                 <aside class="inputFileFormCreate">
@@ -39,7 +41,7 @@
                         Tambahkan cover ebook
                         <i class="bi-arrow-right iconsInputFileArrow"></i>
                     </label>
-                    <input class="inputFIleCreate" type="file" name="cover" accept="image/*">
+                    <input class="inputFIleCreate" type="file" name="cover" accept="image/*">@csrf
                     <aside class="alertFileCreate active" id="coverAlert"></aside>
                 </aside>
                 <aside class="inputFileFormCreate">
@@ -48,29 +50,28 @@
                         Tambahkan icons ebook
                         <i class="bi-arrow-right iconsInputFileArrow"></i>
                     </label>
-                    <input class="inputFIleCreate" type="file" name="icons" accept="image/*">
+                    <input class="inputFIleCreate" type="file" name="icons" accept="image/*">@csrf
                     <aside class="alertFileCreate active" id="coverAlert"></aside>
                 </aside>
                 <aside class="inputFormCreate">
                     <i class="bi-link-45deg iconsInputCreate"></i>
-                    <input class="inputCreate" placeholder="https://url.ebook-anda*" name="url" type="url" required>
+                    <input class="inputCreate" placeholder="https://url.ebook-anda*" name="url" type="url"
+                        required>@csrf
                 </aside>
                 <aside class="textareaFormCreate">
                     <i class="bi-chat-right-text iconsTextareaFormCreate"></i>
-                    <textarea class="textareaFormInputCreate" placeholder="Shinopsis ebook" name="shinopsis" type="text"></textarea>
+                    <textarea class="textareaFormInputCreate" placeholder="Shinopsis ebook" name="shinopsis" type="text"></textarea>@csrf
                 </aside>
                 <aside class="textareaFormCreate">
                     <i class="bi-chat-right-text iconsTextareaFormCreate"></i>
-                    <textarea class="textareaFormInputCreate" placeholder="Description ebook" name="description" type="text"></textarea>
+                    <textarea class="textareaFormInputCreate" placeholder="Description ebook" name="description" type="text"></textarea>@csrf
                 </aside>
-                <div class="flex items-center gap-2.5">
-                    <button type="submit" class="buttonFormCreate" id="btnForm">
-                        <div class="columsButtonFormCreate">
-                            <span class="textButtonFormCreate" id="textForm">Tambahkan</span>
-                            <span class="iconsButtonFormCreate hidden" id="iconsForm"></span>
-                        </div>
-                    </button>
-                </div>
+                <button type="submit" class="buttonFormCreate" id="btnForm">
+                    <div class="columsButtonFormCreate">
+                        <span class="textButtonFormCreate" id="textForm">Tambahkan</span>
+                        <span class="iconsButtonFormCreate hidden" id="iconsForm"></span>
+                    </div>
+                </button>
             </main>
         </section>
     </form>

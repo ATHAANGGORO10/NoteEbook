@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Data;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class DataController extends Controller
 {
-  // Menambahkan dan menyimpan data user
+  // Feature create & storage data user
   public function create()
   {
     return view('desc.components.create');
@@ -30,6 +31,7 @@ class DataController extends Controller
     ]);
 
     $data = new Data();
+    $data->auth = Auth::id();
     if ($request->hasFile('banner')) {
       $file = $request->file('banner');
       $fileName = $file->getClientOriginalName();
@@ -66,7 +68,7 @@ class DataController extends Controller
 
   //-------------------------------------------------------------------------------------------------//
 
-  // Merubah dan menetapkan data user 
+  // Feature update & save data user 
   public function edited($id)
   {
     $data = Data::findOrFail($id);
@@ -90,6 +92,7 @@ class DataController extends Controller
     ]);
 
     $data = Data::findOrFail($id);
+    $data->auth = Auth::id();
     if ($request->hasFile('banner')) {
       $file = $request->file('banner');
       $fileName = $file->getClientOriginalName();
@@ -126,10 +129,20 @@ class DataController extends Controller
 
   //-------------------------------------------------------------------------------------------------//
 
-  // Menambahkan form data user 
+  // Feature show static data user 
   public function views($id)
   {
     $data = Data::findOrFail($id);
     return view('desc.components.views', compact('data'));
+  }
+
+  //-------------------------------------------------------------------------------------------------//
+
+  // Feature remove data user 
+  public function delete($id)
+  {
+    $data = Data::findOrFail($id);
+    $data->delete();
+    return redirect()->route('dashboard')->with('alert', 'Data ebook anda berhasil dihapus');
   }
 }

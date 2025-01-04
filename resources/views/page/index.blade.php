@@ -1,8 +1,10 @@
 @extends('app.root')
 
+@section('title', 'Beranda')
+
 @section('content')
     @if (session('alert'))
-        <aside class="alertSection animate__animated animate__fadeInDown" id="alert">
+        <aside class="alertSection animate__animated animate__fadeInDownBig" id="alert">
             <div class="columsAlertSection">
                 <main class="rowsAlertSection">
                     <i class="bi-bell-fill iconsAlertSection"></i>
@@ -11,9 +13,6 @@
             </div>
         </aside>
     @endif
-    <aside class="screenLoadSection" id="screenLoading">
-        <span class="iconsLoadSection"></span>
-    </aside>
     <nav class="navSection">
         <main class="searchFormInputSection">
             <form class="formSearchInputSection" action="" method="GET">
@@ -26,7 +25,7 @@
         </main>
         <div class="layerBackgroundMenuSection -translate-x-full" id="backgroundMenuSection"></div>
         <menu class="listMenuSection" id="listMenuSection">
-            <a class="bioUserSection" href="#">
+            <a class="bioUserSection" href="{{ url('/profile') }}">
                 <img class="photoBioUserSection" src="{{ asset('asset/asset-photo-default/asset-1.webp') }}" alt=""
                     srcset="">
                 <main class="infoBioUserSection">
@@ -41,23 +40,23 @@
                 </li>
                 <li class="itemListMenuSection">
                     <i class="bi-bookmarks"></i>
-                    <a href="#">Catatan</a>
+                    <a href="{{ url('/notes') }}">Catatan</a>
+                </li>
+                <li class="itemListMenuSection">
+                    <i class="bi-question-circle"></i>
+                    <a href="{{ url('/help') }}">Bantuan</a>
                 </li>
                 <li class="itemListMenuSection">
                     <i class="bi-star"></i>
                     <a href="{{ route('favorite') }}">Favorite</a>
                 </li>
                 <li class="itemListMenuSection">
-                    <i class="bi-question-circle"></i>
-                    <a href="{{ url('https://github.com/ATHAANGGORO10/NoteEbook') }}">Bantuan</a>
+                    <i class="bi-newspaper"></i>
+                    <a href="{{ url('/informasi') }}">Informasi</a>
                 </li>
                 <li class="itemListMenuSection">
                     <i class="bi-people"></i>
-                    <a href="https://tr.ee/DY0iFSRrcp/">Komunitas</a>
-                </li>
-                <li class="itemListMenuSection">
-                    <i class="bi-gear"></i>
-                    <a href="/settings">Pengaturan</a>
+                    <a href="{{ url('https://linktr.ee/Jdevs') }}" target="_blank" rel="noopener noreferrer">Join komunitas</a>
                 </li>
             </ul>
         </menu>
@@ -74,14 +73,14 @@
                     <img src="{{ asset('asset/asset-dashboard/asset-1.svg') }}" alt="asset/icons">
                 </header>
                 <aside class="labelInfoColums">
-                    Anda belum menambahkan ebooks
+                    Anda belum menambahkan ebook
                 </aside>
                 <a class="textInfoIndex" href="{{ route('create') }}">buat cerita ebooks anda</a>
             </div>
         </section>
     @else
         @foreach ($data as $item)
-            <menu class="dataCardUser" data-aos="zoom-in" data-aos-offset="50">@csrf
+            <menu class="dataCardUser {{ $loop->last ? 'pb-3.5' : '' }}" data-aos="zoom-in" data-aos-offset="50">@csrf
                 <a class="dataColumsCardUser" href="{{ route('views', $item->id) }}">
                     <aside class="dataContentCardUser">
                         @if ($item->favorite == 1)
@@ -91,12 +90,12 @@
                             <img class="dataBannerCardUser" src="{{ asset('banner/' . $item->banner) }}"
                                 alt="asset/banner">
                         @else
-                            <img class="dataBannerCardUser" src="{{ asset('asset/asset-photo-default/asset-1.webp') }}"
+                            <img class="dataBannerCardUser" src="{{ asset('asset/asset-photo-default/asset-1.png') }}"
                                 alt="asset/banner">
                         @endif
                         <main class="dataArticelCardUser">
                             <div class="dataLabelCardUser">{{ $item->title }}</div>
-                            <p class="dataDescriptionCardUser">{{ $item->description ? : 'Tidak ada description' }}</p>
+                            <p class="dataDescriptionCardUser">{{ $item->description ?: 'Tidak ada description' }}</p>
                             <article class="dataAuthorCardUser">
                                 <i class="bi-person"></i>
                                 {{ $item->author }}

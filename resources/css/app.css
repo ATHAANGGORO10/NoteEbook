@@ -7,11 +7,11 @@
 @layer base {
     /* style default start */
     .base-body {
-        @apply bg-stone-100 dark:bg-gray-900;
+        @apply bg-white dark:bg-gray-900;
     }
     /* style default end */
 
-    /* feature info start */
+    /* Feature info start */
     .textInfoSection {
         @apply absolute -z-20 top-1/4 left-0 right-0;
     }
@@ -27,20 +27,20 @@
     .textInfoIndex {
         @apply font-medium text-blue-500 text-base active:hover:text-blue-600 active:hover:underline;
     }
-    /* feature info end */
+    /* Feature info end */
 
-    /* feature loadscreen start */
+    /* Feature load screen start */
     .screenLoadSection {
         @apply fixed inset-0 z-50 bg-white flex items-center justify-center;
     }
     .iconsLoadSection {
         @apply min-w-6 min-h-6 border-gray-800 border-2 border-solid rounded-full border-t-transparent animate-spin;
     }
-    /* feature loadscreen end */
+    /* Feature load screen end */
 
-    /* feature alert start */
+    /* Feature alert start */
     .alertSection {
-        @apply fixed left-0 end-0 rounded-xl p-2.5 m-4 border-2 z-50 border-gray-400 bg-neutral-100;
+        @apply fixed w-full px-2.5 py-3.5 z-50 shadow border border-b-stone-400 bg-white;
     }
     .columsAlertSection {
         @apply flex items-center gap-2.5;
@@ -54,52 +54,65 @@
     .alertLabelSection {
         @apply text-sm font-sans font-semibold text-gray-700;
     }
-    /* feature alert end */
+    /* Feature alert end */
 
-    /* feature tooltip start */
+    /* Feature tooltip start */
     .tooltipCreate {
         @apply rounded-full shadow-lg z-20 w-11 h-11 flex items-center justify-center bg-blue-500 fixed bottom-0 end-0 m-4 active:hover:bg-blue-600;
     }
     .columsTooltipCreate {
         @apply font-sans text-gray-200 text-xl;
     }
-    /* feature tooltip end */
+    /* Feature tooltip end */
 }
 
 @layer components {
-    /* header start */
-    .navSection {
-        @apply fixed top-0 z-30 px-4 py-2.5 w-full bg-stone-100;
+    /* Header start */
+    .navSection,
+    .navSectionFavorite,
+    .navSectionProfile {
+        @apply fixed top-0 z-30 px-4 py-3.5 w-full bg-white;
+    }
+    .navSectionFavorite,
+    .navSectionProfile {
+        @apply flex items-center align-middle justify-between;
+    }
+    .iconsBackDashboard {
+        @apply flex items-center font-sans font-medium text-xl gap-2 -ml-1.5 hover:active:text-gray-700;
+    }
+    .iconsHelpCenter {
+        @apply text-xl font-sans font-medium text-blue-500 hover:active:text-blue-700;
     }
     .searchFormInputSection {
-        @apply inline-flex items-center justify-between w-full border-2 border-gray-500 font-sans py-1 px-3 rounded-full;
+        @apply inline-flex items-center align-middle justify-between w-full border-solid border-2 border-gray-900 font-sans py-1 px-3 rounded-full;
     }
     .formSearchInputSection {
         @apply inline-flex items-center justify-center w-full;
     }
     .iconsSearchInputSection {
-        @apply font-extrabold text-base pr-1.5 mb-0.5 text-gray-500 block;
+        @apply font-extrabold text-base pr-2 text-gray-900 block;
     }
     .searchInputSection {
-        @apply bg-transparent w-full font-sans focus:outline-none text-sm text-gray-600 placeholder:text-gray-500 placeholder:font-medium placeholder:font-sans placeholder:text-sm;
+        @apply bg-transparent w-full font-sans focus:outline-none text-sm text-gray-900 placeholder:text-gray-900 placeholder:font-medium placeholder:font-sans placeholder:text-sm;
     }
-    .buttonListMenuSection {
-        @apply pl-1.5;
+    input[type="search"]::-webkit-search-cancel-button {
+        -webkit-appearance: none;
+        appearance: none;
     }
     .iconsListMenuSection {
-        @apply font-extrabold text-xl text-gray-500 block active:hover:text-gray-800;
+        @apply font-extrabold text-xl text-gray-900 block;
     }
     .layerBackgroundMenuSection {
-        @apply fixed inset-0 h-full w-full bg-black bg-opacity-55 transform ease-in-out;
+        @apply fixed inset-0 h-screen w-screen bg-black bg-opacity-55 transform ease-in-out;
     }
     .listMenuSection {
-        @apply fixed inset-0 z-20 h-screen p-4 w-56 bg-white block transform -translate-x-full shadow-xl transition-transform ease-in-out;
+        @apply fixed inset-0 z-50 h-screen p-4 max-w-[12.5rem] bg-white block transform border-solid border-r border-gray-950 border-opacity-55 -translate-x-full transition-transform ease-in-out;
     }
     .bioUserSection {
         @apply flex items-center gap-2.5 pb-5;
     }
     .photoBioUserSection {
-        @apply rounded-full h-9 w-9 border-solid border-gray-400 border-2;
+        @apply rounded-full h-9 w-9 border-solid border-gray-400 border;
     }
     .infoBioUserSection {
         @apply font-sans text-xs truncate;
@@ -113,17 +126,17 @@
     .columsListMenuSection {
         @apply space-y-5 px-2;
     }
-    .itemListMenuSection:nth-child(-n + 7) {
-        @apply text-gray-600 font-sans text-base gap-2.5 flex items-center font-medium active:hover:text-gray-800;
+    .itemListMenuSection:nth-child(-n + 6) {
+        @apply text-gray-600 font-sans text-base gap-3.5 flex items-center font-medium active:hover:text-gray-800;
     }
-    /* header end */
+    /* Header end */
 
-    /* section start */
+    /* Section start */
     .dataCardUser {
-        @apply top-[4.5rem];
+        @apply top-[4.6rem];
     }
     .dataCardUserFavorite {
-        @apply top-16;
+        @apply top-[3.6rem];
     }
     .dataCardUser,
     .dataCardUserFavorite {
@@ -131,18 +144,18 @@
     }
     .dataColumsCardUser,
     .dataColumsCardUserFavorite {
-        @apply block mb-5 duration-300 ease-in-out hover:active:scale-95;
+        @apply block mb-3 duration-300 ease-in-out hover:active:scale-95;
     }
     .dataContentCardUser,
     .dataContentCardUserFavorite {
-        @apply flex border-solid border border-gray-600 shadow-sm rounded-lg font-sans;
+        @apply flex bg-white border border-stone-400 shadow rounded-xl font-sans;
     }
     .dataCardFavorite {
-        @apply text-yellow-400 text-sm absolute pt-0.5 pl-1 z-10;
+        @apply text-yellow-500 text-sm absolute pt-0.5 pl-1 z-10;
     }
     .dataBannerCardUser,
     .dataBannerCardUserFavorite {
-        @apply object-cover max-w-20 max-h-full rounded-tl-lg rounded-bl-lg;
+        @apply object-cover max-w-20 max-h-52 rounded-tl-xl rounded-bl-xl border-r border-stone-400;
     }
     .dataArticelCardUser,
     .dataArticelCardUserFavorite {
@@ -160,11 +173,11 @@
     .dataAuthorCardUserFavorite {
         @apply flex items-center font-medium gap-1.5 text-blue-600 text-xs mt-1;
     }
-    /* section end */
+    /* Section end */
 }
 
 @layer utilities {
-    /* signIn/signUp start */
+    /* SignIn/SignUp start */
     .formHeaderSection {
         @apply -z-10 mx-auto;
     }
@@ -207,12 +220,12 @@
     .formIndexSection {
         @apply text-blue-500 hover:underline;
     }
-    /* signIn/signUp end */
+    /* SignIn/SignUp end */
 
-    /* form/create, edited start */
+    /* Form/create, edited start */
     .formCreate,
     .formEdited {
-        @apply pt-4 pb-7;
+        @apply pt-4 pb-3.5;
     }
     .columsFormCreate,
     .columsFormEdited {
@@ -285,5 +298,5 @@
     .iconsButtonFormFavorite {
         @apply min-h-4 min-w-4 border-gray-300 border-2 border-solid rounded-full border-t-transparent animate-spin;
     }
-    /* form/create end */
+    /* Form/create end */
 }
